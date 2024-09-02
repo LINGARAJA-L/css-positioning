@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Page Layout</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #FAF3E0; /* Change body background color */
+        }
+
+        /* Flexbox Container */
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            min-height: 100vh; /* Full height of the viewport */
+        }
+
+        /* Header */
+        .header {
+            background-color: #FF7043; /* New header background color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: #FFCA28; /* New navigation background color */
+            padding: 10px;
+        }
+
+        .nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 15px;
+        }
+
+        .nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .nav ul li a:hover {
+            background-color: #FFD54F; /* New hover color */
+            border-radius: 4px;
+        }
+
+        /* Main Section */
+        .main {
+            display: flex; /* Create a horizontal flex container */
+            flex: 1; /* Takes remaining height after header and footer */
+            padding: 20px;
+            gap: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background-color: #FFECB3; /* New sidebar background color */
+            padding: 20px;
+            flex: 1; /* Takes equal space with the content */
+            min-width: 200px;
+            display: flex; /* Flexbox inside sidebar */
+            flex-direction: column; /* Stack sidebar items vertically */
+        }
+
+        /* Sidebar Items */
+        .sidebar-item {
+            background-color: #FFF8E1; /* New sidebar item background color */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        /* Main Content */
+        .content {
+            background-color: #FFFFFF;
+            padding: 20px;
+            flex: 3; /* Takes more space than the sidebar */
+            display: flex; /* Flexbox inside content */
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Recipe Item */
+        .recipe-item {
+            background-color: #FFF3E0; /* New recipe item background color */
+            padding: 20px;
+            border: 1px solid #DDD;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .recipe-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .recipe-item h2 {
+            margin-bottom: 10px;
+        }
+
+        .recipe-item p {
+            margin-bottom: 15px;
+        }
+
+        /* Additional Images */
+        .additional-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .additional-images img {
+            width: 200px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #FFF59D; /* New contact section background color */
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 4px;
+        }
+
+        .contact h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #D84315; /* New footer background color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column; /* Stack sidebar and content vertically on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">Recipe Page</div>
+        
+        <!-- Navigation Section -->
+        <div class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Recipes</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content Area -->
+        <div class="main">
+            <!-- Sidebar Section -->
+            <div class="sidebar">
+                <div class="sidebar-item">Popular Recipes</div>
+                <div class="sidebar-item">Recipe Categories</div>
+                <div class="sidebar-item">Recent Comments</div>
+            </div>
+            
+            <!-- Recipe Content Section -->
+            <div class="content">
+                <div class="recipe-item">
+                    <img src="download sc.jpeg" alt="Spaghetti Carbonara">
+                    <h2>Spaghetti Carbonara</h2>
+                    <p>A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.</p>
+                </div>
+                <div class="recipe-item">
+                    <img src="download b.jpeg" alt="Briyani">
+                    <h2>Briyani</h2>
+                    <p>Tamil Nadu Biryani is made with spiced rice, meat, and aromatic herbs.</p>
+                </div>
+                <div class="recipe-item">
+                    <img src="download ca.jpeg" alt="Chicken Alfredo">
+                    <h2>Chicken Alfredo</h2>
+                    <p>Creamy Alfredo sauce with tender chicken and fettuccine pasta.</p>
+                </div>
+                <div class="recipe-item">
+                    <img src="download v.jpeg" alt="Vegetable Stir-fry">
+                    <h2>Vegetable Stir-fry</h2>
+                    <p>A healthy mix of fresh vegetables stir-fried with a savory sauce.</p>
+                </div>
+                
+                <!-- Additional Images Section -->
+                <div class="additional-images">
+                    <img src="download f.jpeg" alt="Fresh Salad">
+                    <img src="download fs.jpeg" alt="Fruit Smoothie">
+                    <img src="download t.jpeg" alt="Tomato Soup">
+                    <img src="download cd.jpeg" alt="Chocolate Dessert">
+                    <img src="download w.jpeg" alt="Waffles">
+                    <img src="download g.jpeg" alt="Gulab Jamun">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: xxxxx1234@gmail.com</p>
+            <p>Phone: +123-456-7890</p>
+            <p>Address: 1234 Foodie Street, Culinary City, Country</p>
+        </div>
+        
+        <!-- Footer Section -->
+        <div class="footer">Footer Content</div>
+    </div>
+</body>
+</html>
